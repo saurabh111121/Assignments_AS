@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Basic Details 
+      ________________________________________________________________________________
+     |           Inputs             |       name                   |      id          |
+     |______________________________|______________________________|__________________|
+     |        Employee Id           |       emp_id                 |    emp_id_id     |
+     |------------------------------|------------------------------|------------------|
+     |           Site               |       site                   |      site_id     |
+     |------------------------------|------------------------------|------------------|
+     |         Supervisor           |       supervisor             |   supervisor_id  |
+     |------------------------------|------------------------------|------------------|
+     |         Login                |       login                  |     login_id     |
+     |------------------------------|------------------------------|------------------|
+     |         Business Title       |       businessTitle          | businessTitle_id |
+     |------------------------------|------------------------------|------------------|
+     |         Department           |       department             |   department_id  |
+     |______________________________|______________________________|__________________|
+     
+-->
 <head>
     <title>Assignment 2.1</title>
     <meta charset="utf-8">
@@ -40,13 +58,10 @@
                         businessTitle: "emp_BT3"
     
                     }
-    
                 ]
               
             */
-
     </script>
-
 
 </head>
 
@@ -74,13 +89,13 @@
                     <div class="modal-body">
                         <div class="container">
 
-                            <form action="#" id="myForm">
+                            <form action="#" id="myForm" onsubmit="return onSubmit(this)">
 
 
                                 <div class="form-group row">
                                     <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="employee_id" name="employee_id" />
+                                        <input type="text" class="form-control" id="emp_id_id" name="emp_id" />
                                     </div>
                                 </div>
 
@@ -88,7 +103,7 @@
                                 <div class="form-group row">
                                     <label for="site" class="col-sm-4 col-form-label">Site: </label>
                                     <div class="col-sm-8">
-                                        <select class="custom-select" name="site_id" id="site_id">
+                                        <select class="custom-select" name="site" id="site_id">
                                             <option value="" class="">Select your Site</option>
                                             <option>DEL 18</option>
                                             <option>PNQ 10</option>
@@ -104,14 +119,14 @@
                                 <div class="form-group row">
                                     <label for="supervisor" class="col-sm-4 col-form-label">Supervisor:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="supervisor_id" name="supervisor_id" />
+                                        <input type="text" class="form-control" id="supervisor_id" name="supervisor" />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="login" class="col-sm-4 col-form-label"> Login:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="login_id" name="login_id" disabled="disabled" placeholder="kalasaur" />
+                                        <input type="text" class="form-control" id="login_id" name="login" disabled="disabled" />
                                     </div>
                                 </div>
 
@@ -119,25 +134,25 @@
                                 <div class="form-group row">
                                     <label for="business title" class="col-sm-4 col-form-label"> Business Title:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="business_title_id" name="business_title_id"  />
+                                        <input type="text" class="form-control" id="businessTitle_id" name="businessTitle"  />
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="department" class="col-sm-4 col-form-label"> Department:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="department_id" name="department_id" />
+                                        <input type="text" class="form-control" id="department_id" name="department" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button>
+                                    <!-- <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button> -->
+                                    <input id="toForm" type="submit" value=" Submit " class="btn btn-primary"/>
                                 </div>
 
 
-
                             </form>
-                            </main>
+                            
 
                         </div>
                     </div>
