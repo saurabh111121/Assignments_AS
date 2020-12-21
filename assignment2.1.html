@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 
 <html>
+<!-- 
+Employee id used for testing :
+123456
+12345
+123
+101010
+121212
+131313
+-->
+
 
 <!-- Basic Details for 
     
      1. Index Page
+      ___________________________________________________________________________________
+     |           Inputs             |       name                   |      id             |
+     |______________________________|______________________________|_____________________|
+     |        Employee Id           |                              |   index_emp_id      |
+     |------------------------------|------------------------------|---------------------|
+     |           Site               |                              |    index_site_id    |
+     |------------------------------|------------------------------|---------------------|
+     |         Supervisor           |                              | index_supervisor_id |
+     |------------------------------|------------------------------|---------------------|
+     |         Login                |                              |   change_login_id   |
+     |------------------------------|------------------------------|---------------------|
+     |         Business Title       |                              | change_businessTitle|
+     |------------------------------|------------------------------|---------------------|
+     |         Department           |                              | change_department   |
+     |______________________________|______________________________|_____________________|
      
-      ________________________________________________________________________________
-     |           Inputs             |       name                   |      id          |
-     |______________________________|______________________________|__________________|
-     |        Employee Id           |       emp_id                 |    emp_id_id     |
-     |------------------------------|------------------------------|------------------|
-     |           Site               |       site                   |      site_id     |
-     |------------------------------|------------------------------|------------------|
-     |         Supervisor           |       supervisor             |   supervisor_id  |
-     |------------------------------|------------------------------|------------------|
-     |         Login                |       login                  |     login_id     |
-     |------------------------------|------------------------------|------------------|
-     |         Business Title       |       businessTitle          | businessTitle_id |
-     |------------------------------|------------------------------|------------------|
-     |         Department           |       department             |   department_id  |
-     |______________________________|______________________________|__________________|
 
 
      2. Form (from Navbar )
-
       ________________________________________________________________________________
      |           Inputs             |       name                   |      id          |
      |______________________________|______________________________|__________________|
@@ -40,7 +49,7 @@
      |______________________________|______________________________|__________________|
 
      
-     3. Update (from Navvar)
+     3. Update (from Navbar)
       ___________________________________________________________________________________
      |           Inputs             |       name                   |      id             |
      |______________________________|______________________________|_____________________|
@@ -73,7 +82,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
@@ -305,8 +313,8 @@
                             </div>
                         </div>
                     </div>
-                 <!------------------------------------------------------------------------------------------------------------------------------------------ -->
-                  
+                    <!------------------------------------------------------------------------------------------------------------------------------------------ -->
+
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#update_Modal">UPDATE</a>
                     </li>
@@ -324,16 +332,17 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body">
-                                    <div class="">  <!-- exclued the container class from here-->
+                                    <div class="">
+                                        <!-- exclued the container class from here-->
 
-                                        <form action="#" id="update_Form">
+                                        <form action="#" id="update_Form" class="needs-validation1" novalidate>
 
 
                                             <div class="form-group row">
                                                 <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="up_emp_id"
-                                                        name="emp_id" />
+                                                    <input type="text" class="form-control" id="up_emp_id" name="emp_id"
+                                                        onfocusout="myFunction1()" required />
                                                 </div>
                                             </div>
 
@@ -341,13 +350,12 @@
                                             <div class="form-group row">
                                                 <label for="site" class="col-sm-4 col-form-label">Site: </label>
                                                 <div class="col-sm-8">
-                                                    <select class="custom-select" name="site" id="up_site_id">
+                                                    <select class="custom-select" name="site" id="up_site_id" required>
                                                         <option value="" class="">Select your Site</option>
-                                                        <option>DEL 18</option>
-                                                        <option>PNQ 10</option>
-                                                        <option>HYD 20</option>
-                                                        <option>DEL 17</option>
-                                                        <option>CJB 10</option>
+                                                        <option>DEL</option>
+                                                        <option>PNQ</option>
+                                                        <option>HYD</option>
+                                                        <option>CJB</option>
                                                         <option>VCS</option>
                                                     </select>
                                                 </div>
@@ -359,15 +367,15 @@
                                                     class="col-sm-4 col-form-label">Supervisor:</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="up_supervisor_id"
-                                                        name="supervisor" />
+                                                        name="supervisor" required />
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label for="login" class="col-sm-4 col-form-label"> Login:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="up_login_id" name="login"
-                                                        disabled="disabled" />
+                                                    <input type="text" class="form-control" id="up_login_id"
+                                                        name="login" disabled="disabled" />
                                                 </div>
                                             </div>
 
@@ -377,7 +385,7 @@
                                                     Title:</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="up_businessTitle_id"
-                                                        name="businessTitle" />
+                                                        name="businessTitle" required />
                                                 </div>
                                             </div>
 
@@ -386,18 +394,124 @@
                                                     Department:</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="up_department_id"
-                                                        name="department" />
+                                                        name="department" required />
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <!-- <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button> -->
-                                                <input id="toForm" type="submit" value=" Submit "
-                                                    class="btn btn-primary" />
+                                                <button class="btn btn-success">Submit</button>
                                             </div>
 
 
                                         </form>
+
+                                        <script>
+
+                                            function myFunction1() {
+                                                var x = document.getElementById('up_emp_id').value;
+
+                                                var Employee_details = [
+                                                    {
+                                                        emp_id: 123456,
+                                                        login: "kalasaur",
+                                                        site: "DEL",
+                                                        supervisor: "abhinay",
+                                                        department: "Automation",
+                                                        businessTitle: "CS Associate"
+                                                    }, {
+                                                        emp_id: 12345,
+                                                        login: "qwerty",
+                                                        site: "PNQ",
+                                                        supervisor: "Rohit",
+                                                        department: "quality",
+                                                        businessTitle: "CS quality"
+                                                    }, {
+                                                        emp_id: 123,
+                                                        login: "login3",
+                                                        site: "HYD",
+                                                        supervisor: "Rishab",
+                                                        department: "Tech Support",
+                                                        businessTitle: "CS Support"
+
+                                                    }, {
+                                                        emp_id: 101010,
+                                                        login: "ankusraw",
+                                                        site: "DEL",
+                                                        supervisor: "jamil",
+                                                        department: "operations",
+                                                        businessTitle: "GRPM"
+
+                                                    }, {
+                                                        emp_id: 121212,
+                                                        login: "ashnagpa",
+                                                        site: "CJB",
+                                                        supervisor: "Ashim",
+                                                        department: "operations",
+                                                        businessTitle: "Team Manager"
+
+                                                    }, {
+                                                        emp_id: 131313,
+                                                        login: "nnhimans",
+                                                        site: "PNQ",
+                                                        supervisor: "Rohit",
+                                                        department: "operations",
+                                                        businessTitle: "CS Associate"
+
+                                                    }
+                                                ]
+
+                                                for (var i = 0; i < Employee_details.length; i++) {
+                                                    if (Employee_details[i].emp_id == x) {
+                                                        document.getElementById('up_site_id').value = Employee_details[i].site;
+                                                        document.getElementById('up_supervisor_id').value = Employee_details[i].supervisor;
+                                                        document.getElementById('up_login_id').value = Employee_details[i].login;
+                                                        document.getElementById('up_businessTitle_id').value = Employee_details[i].businessTitle;
+                                                        document.getElementById('up_department_id').value = Employee_details[i].department;
+
+                                                    }
+                                                }
+                                            } //myFunction1 end
+
+                                            (function () {
+                                                window.addEventListener('load', function () {
+                                                    var ayx = document.getElementsByClassName('needs-validation1');
+                                                    var validation = Array.prototype.filter.call(ayx, function (form) {
+                                                        form.addEventListener('submit', function (event) {
+                                                            if (form.checkValidity() === false) {
+                                                                event.preventDefault();
+                                                                event.stopPropagation();
+                                                            }
+                                                            form.classList.add('was-validated');
+                                                            //enter your code here
+                                                            if (form.checkValidity() == true) {
+                                                                
+                                                                var empid = document.getElementById('up_emp_id').value;
+                                                                var site = document.getElementById('up_site_id').value;
+                                                                var supervisor = document.getElementById('up_supervisor_id').value;
+                                                                var login = document.getElementById('up_login_id').value;
+                                                                var businessTitle = document.getElementById('up_businessTitle_id').value;
+                                                                var department = document.getElementById('up_department_id').value;
+
+                                                                document.getElementById('index_emp_id').value = empid;
+                                                                document.getElementById('index_site_id').value = site;
+                                                                document.getElementById('index_supervisor_id').value = supervisor;
+                                                                document.getElementById('change_businessTitle').innerHTML = businessTitle;
+                                                                document.getElementById('change_department').innerHTML = department;
+                                                                document.getElementById('change_login_id').innerHTML = login;
+                                                                
+
+                                                                event.preventDefault(); // avoiding page refresh here 
+                                                                document.getElementById('update_Form').reset(); // clearing form data                                                   
+                                                                document.getElementById('update_Form').classList.remove("was-validated"); // clearing validation
+                                                                $('#update_Modal').modal('toggle'); // auto-closing modal on clicking the subnmit button
+
+                                                            }
+
+                                                        }, false);
+                                                    });
+                                                }, false);
+                                            })(); 
+                                        </script>
 
 
                                     </div>
@@ -408,7 +522,7 @@
                             </div>
                         </div>
                     </div>
-                  <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
+                    <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
                     <li class="nav-item active">
@@ -444,7 +558,7 @@
                         <div class="">
                             <fieldset class="rounded">
                                 <legend id="field_id">Employee ID</legend>
-                                <input type="text" placeholder="12345678" class="container"><br><br>
+                                <input type="text" placeholder="12345678" id="index_emp_id" class="container"><br><br>
                             </fieldset>
                         </div>
                     </div>
@@ -452,7 +566,7 @@
                         <div class="">
                             <fieldset class="rounded ">
                                 <legend>SITE Location</legend>
-                                <input type="text" placeholder="HYD" class="container"><br><br>
+                                <input type="text" placeholder="HYD" id="index_site_id" class="container"><br><br>
                             </fieldset>
                         </div>
                     </div>
@@ -460,7 +574,8 @@
                         <div class="">
                             <fieldset class="rounded">
                                 <legend>Supervisor</legend>
-                                <input type="text" placeholder="abhinayv" class="container"><br><br>
+                                <input type="text" placeholder="abhinayv" id="index_supervisor_id"
+                                    class="container"><br><br>
                             </fieldset>
                         </div>
                     </div>
@@ -475,13 +590,13 @@
                                 <thead class="thead-dark" id="table_head_color">
                                     <tr>
                                         <th>Login</th>
-                                        <th>LoginID</th>
+                                        <th id="change_login_id">LoginID</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Business Title</td>
-                                        <td>Automation Specialist</td>
+                                        <td id="change_businessTitle">Automation Specialist</td>
 
                                     </tr>
                                     <tr>
@@ -490,7 +605,7 @@
                                     </tr>
                                     <tr>
                                         <td>Department</td>
-                                        <td>CS Analytics</td>
+                                        <td id="change_department">CS Analytics</td>
                                     </tr>
                                 </tbody>
                             </table>
