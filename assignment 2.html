@@ -221,6 +221,7 @@
                                                             }
                                                             form.classList.add('was-validated');
                                                             if(form.checkValidity() == true){
+                                                             event.preventDefault();
                                                             var xdata = {
                                                              Login: login_id.value,
                                                              Name: name_id.value,
