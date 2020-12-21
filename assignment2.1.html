@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<!-- Basic Details 
+<html>
+
+<!-- Basic Details for 
+    
+     1. Index Page
+     
       ________________________________________________________________________________
      |           Inputs             |       name                   |      id          |
      |______________________________|______________________________|__________________|
@@ -17,152 +21,489 @@
      |------------------------------|------------------------------|------------------|
      |         Department           |       department             |   department_id  |
      |______________________________|______________________________|__________________|
+
+
+     2. Form (from Navbar )
+
+      ________________________________________________________________________________
+     |           Inputs             |       name                   |      id          |
+     |______________________________|______________________________|__________________|
+     |          Login               |         login                |    login_id      |
+     |------------------------------|------------------------------|------------------|
+     |           Name               |         Name                 |      name_id     |
+     |------------------------------|------------------------------|------------------|
+     |           OU                 |          OU                  |       ou_id      |
+     |------------------------------|------------------------------|------------------|
+     |         Comments             |       Comments               |     Comments_id  |
+     |------------------------------|------------------------------|------------------|
+     |          Is Permanent        |       is_permanent           | yes_id and no_id |
+     |______________________________|______________________________|__________________|
+
+     
+     3. Update (from Navvar)
+      ___________________________________________________________________________________
+     |           Inputs             |       name                   |      id             |
+     |______________________________|______________________________|_____________________|
+     |        Employee Id           |       emp_id                 |   up_emp_id         |
+     |------------------------------|------------------------------|---------------------|
+     |           Site               |       site                   |    up_site_id       |
+     |------------------------------|------------------------------|---------------------|
+     |         Supervisor           |       supervisor             | up_supervisor_id    |
+     |------------------------------|------------------------------|---------------------|
+     |         Login                |       login                  |     up_login_id     |
+     |------------------------------|------------------------------|---------------------|
+     |         Business Title       |       businessTitle          |up_businessTitle_id  |
+     |------------------------------|------------------------------|---------------------|
+     |         Department           |       department             | up_department_id    |
+     |______________________________|______________________________|_____________________|
+
+
+     
      
 -->
+
 <head>
     <title>Assignment 2.1</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Saurabh kala @kalasaur">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  
-    <script>
-        
 
-        /*
-                Employee_details = [
-    
-                    {
-                        emp_id: 34567,
-                        login: "login1",
-                        site: "employee_site1",
-                        supervisor: "tm_login1",
-                        department: "emp_dep1",
-                        businessTitle: "emp_BT1"
-                    }, {
-                        emp_id: 34568,
-                        login: "login2",
-                        site: "employee_site2",
-                        supervisor: "tm_login2",
-                        department: "emp_dep2",
-                        businessTitle: "emp_BT2"
-                    }, {
-                        emp_id: 34567,
-                        login: "login3",
-                        site: "employee_site3",
-                        supervisor: "tm_login3",
-                        department: "emp_dep3",
-                        businessTitle: "emp_BT3"
-    
-                    }
-                ]
-                */        
-    </script>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {
+            height: 440px
+        }
 
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #b8babbf8;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+
+        /* image css */
+        #img_sau {
+            height: 150px;
+            width: 150px;
+            float: none;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 33px;
+        }
+
+
+        /* fieldset css */
+        legend {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            width: 80%;
+            border-radius: 4px;
+            padding: 5px 5px 5px 10px;
+
+        }
+
+        fieldset {
+            border: 1px solid black !important;
+            margin: 0;
+
+            padding: 10px;
+            position: relative;
+            border-radius: 4px;
+            padding-left: 10px !important;
+        }
+
+        /* Navbar margin  */
+        #margin123 {
+            margin-left: 1%;
+            margin-right: 2%;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="margin123">
+        <a class="navbar-brand" href="#"><b>AMAZON</b></a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
 
-    <div class="container">
-        <h2>Modal Example</h2>
-        <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Open modal
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- The Modal -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title w-100 text-center container-fluid">UPDATE FORM</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="ml-auto navbar-nav " id="navbarSupportedContent">
+                <ul class=" nav navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TABLE</a>
+                    </li>
+
+                    <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">FORM</a>
+                    </li>
+                    <!-- The Modal -->
+
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title w-100 text-center">ADD EMPLOYEE DETAILS</h4>
+
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="justify-content-center ">
+                                        <form action="#" id="myForm" class="needs-validation" novalidate>
+
+
+                                            <div class="form-group row">
+                                                <label for="last" class="col-sm-2 col-form-label">Login:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="login_id" name="login"
+                                                        required autocomplete="off" autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="first" class="col-sm-2 col-form-label">Name:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="name_id" name="Name" class="form-control"
+                                                        required autocomplete="off" autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label for="OU" class="col-sm-2 col-form-label">OU: </label>
+                                                <div class="col-sm-10">
+                                                    <select class="custom-select" name="OU" id="ou_id" required>
+                                                        <option value="" class="">Select your OU</option>
+                                                        <option>NA</option>
+                                                        <option>IN</option>
+                                                        <option>UK</option>
+                                                        <option>JP</option>
+                                                        <option>AU</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="comment" class="col-sm-2 col-form-label">Comments:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="comments_id" name="Comments"
+                                                        class="form-control" required autocomplete="off"
+                                                        autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row radio_is_permanent">
+                                                <label for="Permanent" class="col-sm-4 col-form-label">Is
+                                                    Permanent:</label>
+                                                <div class="custom-control custom-radio col-sm-4">
+                                                    <input type="radio" class="custom-control-input" id="yes_id"
+                                                        name="is_permanent" value="yes" required>
+                                                    <label class="custom-control-label" for="yes_id">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio col-sm-4">
+                                                    <input type="radio" class="custom-control-input" id="no_id"
+                                                        name="is_permanent" value="no" required>
+                                                    <label class="custom-control-label" for="no_id">No</label>
+                                                </div>
+
+                                            </div>
+
+                                            <label id="warn1" style="color: red; visibility: hidden;">All the fields are
+                                                mandatory!</label>
+
+
+                                            <div class="form-group">
+                                                <button class="btn btn-primary" id="btnSubmit"
+                                                    type="submit">Submit</button>
+                                            </div>
+
+                                        </form>
+                                        </main>
+
+                                        <script>
+                                            (function () {
+                                                window.addEventListener('load', function () {
+                                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                    var forms = document.getElementsByClassName('needs-validation');
+                                                    // Loop over them and prevent submission
+                                                    var validation = Array.prototype.filter.call(forms, function (form) {
+                                                        form.addEventListener('submit', function (event) {
+                                                            if (form.checkValidity() === false) {
+                                                                event.preventDefault();
+                                                                event.stopPropagation();
+                                                            }
+                                                            form.classList.add('was-validated');
+                                                            if (form.checkValidity() == true) {
+                                                                event.preventDefault();
+                                                                var xdata = {
+                                                                    Login: login_id.value,
+                                                                    Name: name_id.value,
+                                                                    OU: ou_id.value,
+                                                                    Comments: comments_id.value,
+                                                                    Is_permanent: $("input[type='radio'][name='is_permanent']:checked").val()
+                                                                }
+                                                                console.log(JSON.stringify(xdata));
+                                                                document.forms[0].reset();
+                                                                document.getElementById('myForm').classList.remove("was-validated");
+
+                                                            }
+
+                                                        }, false); // end of function(event)
+                                                    });   //end of function(form)
+                                                }, false); //end of  window.addEventListener('load', function () 
+                                            })();  // end of funtion()
+
+                                        </script>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+
+
+                            </div>
+                        </div>
                     </div>
+                 <!------------------------------------------------------------------------------------------------------------------------------------------ -->
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#update_Modal">UPDATE</a>
+                    </li>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <div class="container">
+                    <!-- The Modal -->
+                    <div class="modal" id="update_Modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
 
-                            <form action="#" id="myForm" >
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title w-100 text-center">UPDATE FORM</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="">  <!-- exclued the container class from here-->
+
+                                        <form action="#" id="update_Form">
 
 
-                                <div class="form-group row">
-                                    <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="emp_id_id" name="emp_id" />
+                                            <div class="form-group row">
+                                                <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="up_emp_id"
+                                                        name="emp_id" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label for="site" class="col-sm-4 col-form-label">Site: </label>
+                                                <div class="col-sm-8">
+                                                    <select class="custom-select" name="site" id="up_site_id">
+                                                        <option value="" class="">Select your Site</option>
+                                                        <option>DEL 18</option>
+                                                        <option>PNQ 10</option>
+                                                        <option>HYD 20</option>
+                                                        <option>DEL 17</option>
+                                                        <option>CJB 10</option>
+                                                        <option>VCS</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label for="supervisor"
+                                                    class="col-sm-4 col-form-label">Supervisor:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="up_supervisor_id"
+                                                        name="supervisor" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="login" class="col-sm-4 col-form-label"> Login:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="up_login_id" name="login"
+                                                        disabled="disabled" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label for="business title" class="col-sm-4 col-form-label"> Business
+                                                    Title:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="up_businessTitle_id"
+                                                        name="businessTitle" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="department" class="col-sm-4 col-form-label">
+                                                    Department:</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control" id="up_department_id"
+                                                        name="department" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <!-- <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button> -->
+                                                <input id="toForm" type="submit" value=" Submit "
+                                                    class="btn btn-primary" />
+                                            </div>
+
+
+                                        </form>
+
+
                                     </div>
                                 </div>
 
+                                <!-- Modal footer -->
 
-                                <div class="form-group row">
-                                    <label for="site" class="col-sm-4 col-form-label">Site: </label>
-                                    <div class="col-sm-8">
-                                        <select class="custom-select" name="site" id="site_id">
-                                            <option value="" class="">Select your Site</option>
-                                            <option>DEL 18</option>
-                                            <option>PNQ 10</option>
-                                            <option>HYD 20</option>
-                                            <option>DEL 17</option>
-                                            <option>CJB 10</option>
-                                            <option>VCS</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <!-- ------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-                                <div class="form-group row">
-                                    <label for="supervisor" class="col-sm-4 col-form-label">Supervisor:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="supervisor_id" name="supervisor" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="login" class="col-sm-4 col-form-label"> Login:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="login_id" name="login" disabled="disabled" />
-                                    </div>
-                                </div>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
-                                <div class="form-group row">
-                                    <label for="business title" class="col-sm-4 col-form-label"> Business Title:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="businessTitle_id" name="businessTitle"  />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="department" class="col-sm-4 col-form-label"> Department:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="department_id" name="department" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <!-- <button class="btn btn-primary" id="btnSubmit" type="submit">Submit</button> -->
-                                    <input id="toForm" type="submit" value=" Submit " class="btn btn-primary"/>
-                                </div>
+    <br>
 
 
-                            </form>
-                            
+    <!-- Main body -->
+    <div class="container col">
+        <!-- left side -->
+        <div class="row content col-sm">
+            <div class="col-sm-3 sidenav">
+                <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img"
+                    class="rounded-circle img-fluid responsive" id="img_sau" style="display: block;">
+                <br>
+                <div class="container text-center">
+                    <span class="badge badge-secondary">SAURABH KALA</span>
+                </div>
+            </div>
 
+            <br>
+            <!--Right side top-->
+            <div class="col ">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded">
+                                <legend id="field_id">Employee ID</legend>
+                                <input type="text" placeholder="12345678" class="container"><br><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded ">
+                                <legend>SITE Location</legend>
+                                <input type="text" placeholder="HYD" class="container"><br><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded">
+                                <legend>Supervisor</legend>
+                                <input type="text" placeholder="abhinayv" class="container"><br><br>
+                            </fieldset>
                         </div>
                     </div>
 
-                    <!-- Modal footer -->
-                    
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="">
+                            <!-- Table part  -->
+                            <table class="table table-bordered" style="position: relative;">
+                                <thead class="thead-dark" id="table_head_color">
+                                    <tr>
+                                        <th>Login</th>
+                                        <th>LoginID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Business Title</td>
+                                        <td>Automation Specialist</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hire Date</td>
+                                        <td>1st January 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department</td>
+                                        <td>CS Analytics</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
+
+
+
 
 </body>
 
