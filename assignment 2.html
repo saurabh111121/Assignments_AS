@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>PAGE LAYOUT - I</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Saurabh kala @kalasaur">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {
+            height: 440px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #b8babbf8;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+
+        /* image css */
+        #img_sau {
+            height: 150px;
+            width: 150px;
+            float: none;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 33px;
+        }
+
+
+        /* fieldset css */
+        legend {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            width: 80%;
+            border-radius: 4px;
+            padding: 5px 5px 5px 10px;
+
+        }
+
+        fieldset {
+            border: 1px solid black !important;
+            margin: 0;
+
+            padding: 10px;
+            position: relative;
+            border-radius: 4px;
+            padding-left: 10px !important;
+        }
+
+        /* Navbar margin  */
+        #margin123 {
+            margin-left: 1%;
+            margin-right: 2%;
+            text-align: center;
+        }
+ 
+        
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="margin123">
+        <a class="navbar-brand" href="#"><b>AMAZON</b></a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <div class="ml-auto navbar-nav " id="navbarSupportedContent">
+                <ul class=" nav navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">TABLE</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">FORM</a>
+                    </li>
+                    <!-- experimenet  -->
+
+                    <!-- The Modal -->
+
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title w-100 text-center">ADD EMPLOYEE DETAILS</h4>
+
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="justify-content-center ">
+                                        <form action="#" id="myForm"
+                                            class="needs-validation" novalidate>
+
+
+                                            <div class="form-group row">
+                                                <label for="last" class="col-sm-2 col-form-label">Login:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="login_id" name="login"
+                                                        required autocomplete="off" autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="first" class="col-sm-2 col-form-label">Name:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="name_id" name="Name" class="form-control"
+                                                        required autocomplete="off" autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <label for="OU" class="col-sm-2 col-form-label">OU: </label>
+                                                <div class="col-sm-10">
+                                                    <select class="custom-select" name="OU" id="ou_id" required>
+                                                        <option value="" class="">Select your OU</option>
+                                                        <option>NA</option>
+                                                        <option>IN</option>
+                                                        <option>UK</option>
+                                                        <option>JP</option>
+                                                        <option>AU</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="comment" class="col-sm-2 col-form-label">Comments:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" id="comments_id" name="Comments"
+                                                        class="form-control" required autocomplete="off"
+                                                        autocapitalize="on" />
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row radio_is_permanent">
+                                                <label for="Permanent" class="col-sm-4 col-form-label">Is
+                                                    Permanent:</label>
+                                                <div class="custom-control custom-radio col-sm-4">
+                                                    <input type="radio" class="custom-control-input" id="yes_id"
+                                                        name="is_permanent" value="yes" required>
+                                                    <label class="custom-control-label" for="yes_id">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio col-sm-4">
+                                                    <input type="radio" class="custom-control-input" id="no_id"
+                                                        name="is_permanent" value="no" required>
+                                                    <label class="custom-control-label" for="no_id">No</label>
+                                                </div>
+
+                                            </div>
+
+                                            <label id="warn1" style="color: red; visibility: hidden;">All the fields are
+                                                mandatory!</label>
+
+
+                                            <div class="form-group">
+                                                <button class="btn btn-primary" id="btnSubmit"
+                                                    type="submit">Submit</button>
+                                            </div>
+
+                                        </form>
+                                        </main>
+
+                                        <script>
+                                            (function () {                                               
+                                                window.addEventListener('load', function () {
+                                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                                    var forms = document.getElementsByClassName('needs-validation');
+                                                    // Loop over them and prevent submission
+                                                    var validation = Array.prototype.filter.call(forms, function (form) {
+                                                        form.addEventListener('submit', function (event) {
+                                                            if (form.checkValidity() === false) {
+                                                                event.preventDefault();
+                                                                event.stopPropagation();
+                                                            }
+                                                            form.classList.add('was-validated');
+                                                            if(form.checkValidity() == true){
+                                                            var xdata = {
+                                                             Login: login_id.value,
+                                                             Name: name_id.value,
+                                                             OU: ou_id.value,
+                                                             Comments: comments_id.value,
+                                                             Is_permanent: $("input[type='radio'][name='is_permanent']:checked").val()
+                                                              }
+                                                             console.log(JSON.stringify(xdata));
+                                                             document.forms[0].reset();
+                                                             document .getElementById('myForm').classList.remove("was-validated");
+                                                             
+                                                            }
+
+                                                        }, false); // end of function(event)
+                                                    });   //end of function(form)
+                                                }, false); //end of  window.addEventListener('load', function () 
+                                            })();  // end of funtion()
+
+                                        </script>
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <br>
+
+
+    <!-- Main body -->
+    <div class="container col">
+        <!-- left side -->
+        <div class="row content col-sm">
+            <div class="col-sm-3 sidenav">
+                <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img"
+                    class="rounded-circle img-fluid responsive" id="img_sau" style="display: block;">
+                <br>
+                <div class="container text-center">
+                    <span class="badge badge-secondary">SAURABH KALA</span>
+                </div>
+            </div>
+
+            <br>
+            <!--Right side top-->
+            <div class="col ">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded">
+                                <legend id="field_id">Employee ID</legend>
+                                <input type="text" placeholder="12345678" class="container"><br><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded ">
+                                <legend>SITE Location</legend>
+                                <input type="text" placeholder="HYD" class="container"><br><br>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="">
+                            <fieldset class="rounded">
+                                <legend>Supervisor</legend>
+                                <input type="text" placeholder="abhinayv" class="container"><br><br>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="">
+                            <!-- Table part  -->
+                            <table class="table table-bordered" style="position: relative;">
+                                <thead class="thead-dark" id="table_head_color">
+                                    <tr>
+                                        <th>Login</th>
+                                        <th>LoginID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Business Title</td>
+                                        <td>Automation Specialist</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Hire Date</td>
+                                        <td>1st January 2020</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department</td>
+                                        <td>CS Analytics</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
