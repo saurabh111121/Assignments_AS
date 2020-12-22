@@ -399,6 +399,10 @@ Employee id used for testing :
                                             </div>
 
                                             <div class="form-group">
+                                                <p id="updateForm_warning" style="color: red; visibility: bold;">Note : Make sure that the emp_id is from the database,otherwise it won't get reflected.</p>
+                                            </div>
+
+                                            <div class="form-group">
                                                 <button class="btn btn-success">Submit</button>
                                             </div>
 
@@ -406,60 +410,58 @@ Employee id used for testing :
                                         </form>
 
                                         <script>
+                                            var Employee_details = [
+                                                {
+                                                    emp_id: 123456,
+                                                    login: "kalasaur",
+                                                    site: "DEL",
+                                                    supervisor: "abhinay",
+                                                    department: "Automation",
+                                                    businessTitle: "CS Associate"
+                                                }, {
+                                                    emp_id: 12345,
+                                                    login: "qwerty",
+                                                    site: "PNQ",
+                                                    supervisor: "Rohit",
+                                                    department: "quality",
+                                                    businessTitle: "CS quality"
+                                                }, {
+                                                    emp_id: 123,
+                                                    login: "login3",
+                                                    site: "HYD",
+                                                    supervisor: "Rishab",
+                                                    department: "Tech Support",
+                                                    businessTitle: "CS Support"
 
+                                                }, {
+                                                    emp_id: 101010,
+                                                    login: "ankusraw",
+                                                    site: "DEL",
+                                                    supervisor: "jamil",
+                                                    department: "operations",
+                                                    businessTitle: "GRPM"
+
+                                                }, {
+                                                    emp_id: 121212,
+                                                    login: "ashnagpa",
+                                                    site: "CJB",
+                                                    supervisor: "Ashim",
+                                                    department: "operations",
+                                                    businessTitle: "Team Manager"
+
+                                                }, {
+                                                    emp_id: 131313,
+                                                    login: "nnhimans",
+                                                    site: "PNQ",
+                                                    supervisor: "Rohit",
+                                                    department: "operations",
+                                                    businessTitle: "CS Associate"
+
+                                                }
+                                            ]
                                             function myFunction1() {
                                                 var x = document.getElementById('up_emp_id').value;
-
-                                                var Employee_details = [
-                                                    {
-                                                        emp_id: 123456,
-                                                        login: "kalasaur",
-                                                        site: "DEL",
-                                                        supervisor: "abhinay",
-                                                        department: "Automation",
-                                                        businessTitle: "CS Associate"
-                                                    }, {
-                                                        emp_id: 12345,
-                                                        login: "qwerty",
-                                                        site: "PNQ",
-                                                        supervisor: "Rohit",
-                                                        department: "quality",
-                                                        businessTitle: "CS quality"
-                                                    }, {
-                                                        emp_id: 123,
-                                                        login: "login3",
-                                                        site: "HYD",
-                                                        supervisor: "Rishab",
-                                                        department: "Tech Support",
-                                                        businessTitle: "CS Support"
-
-                                                    }, {
-                                                        emp_id: 101010,
-                                                        login: "ankusraw",
-                                                        site: "DEL",
-                                                        supervisor: "jamil",
-                                                        department: "operations",
-                                                        businessTitle: "GRPM"
-
-                                                    }, {
-                                                        emp_id: 121212,
-                                                        login: "ashnagpa",
-                                                        site: "CJB",
-                                                        supervisor: "Ashim",
-                                                        department: "operations",
-                                                        businessTitle: "Team Manager"
-
-                                                    }, {
-                                                        emp_id: 131313,
-                                                        login: "nnhimans",
-                                                        site: "PNQ",
-                                                        supervisor: "Rohit",
-                                                        department: "operations",
-                                                        businessTitle: "CS Associate"
-
-                                                    }
-                                                ]
-
+                                                
                                                 for (var i = 0; i < Employee_details.length; i++) {
                                                     if (Employee_details[i].emp_id == x) {
                                                         document.getElementById('up_site_id').value = Employee_details[i].site;
@@ -467,8 +469,8 @@ Employee id used for testing :
                                                         document.getElementById('up_login_id').value = Employee_details[i].login;
                                                         document.getElementById('up_businessTitle_id').value = Employee_details[i].businessTitle;
                                                         document.getElementById('up_department_id').value = Employee_details[i].department;
-
-                                                    }
+                                                        
+                                                    }                                                    
                                                 }
                                             } //myFunction1 end
 
@@ -484,7 +486,7 @@ Employee id used for testing :
                                                             form.classList.add('was-validated');
                                                             //enter your code here
                                                             if (form.checkValidity() == true) {
-                                                                
+
                                                                 var empid = document.getElementById('up_emp_id').value;
                                                                 var site = document.getElementById('up_site_id').value;
                                                                 var supervisor = document.getElementById('up_supervisor_id').value;
@@ -492,18 +494,22 @@ Employee id used for testing :
                                                                 var businessTitle = document.getElementById('up_businessTitle_id').value;
                                                                 var department = document.getElementById('up_department_id').value;
 
+                                                                for (var i = 0; i < Employee_details.length; i++) {
+                                                                if (Employee_details[i].emp_id == empid) {
                                                                 document.getElementById('index_emp_id').value = empid;
                                                                 document.getElementById('index_site_id').value = site;
                                                                 document.getElementById('index_supervisor_id').value = supervisor;
                                                                 document.getElementById('change_businessTitle').innerHTML = businessTitle;
                                                                 document.getElementById('change_department').innerHTML = department;
                                                                 document.getElementById('change_login_id').innerHTML = login;
+                                                                }
                                                                 
-
+                                                                }
                                                                 event.preventDefault(); // avoiding page refresh here 
                                                                 document.getElementById('update_Form').reset(); // clearing form data                                                   
                                                                 document.getElementById('update_Form').classList.remove("was-validated"); // clearing validation
                                                                 $('#update_Modal').modal('toggle'); // auto-closing modal on clicking the subnmit button
+                                                                
 
                                                             }
 
@@ -586,7 +592,7 @@ Employee id used for testing :
                     <div class="col-sm-12">
                         <div class="">
                             <!-- Table part  -->
-                            <table class="table table-bordered" style="position: relative;">
+                            <table class="table table-bordered" style="position: relative; ">
                                 <thead class="thead-dark" id="table_head_color">
                                     <tr>
                                         <th>Login</th>
