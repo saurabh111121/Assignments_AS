@@ -18,6 +18,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
@@ -25,6 +26,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
+
+
+
     <style>
         .mainContent {
             margin-top: 55px;
@@ -71,8 +75,13 @@
             /*hinding background */
             padding: 15px;
         }
+
         .modal-container:target {
             visibility: visible;
+        }
+        .home-container{
+            /* background-image: url(https://picsum.photos/200/300); */
+            
         }
     </style>
 
@@ -141,26 +150,102 @@
 
 
         <div class="home-container">
-            <h1>Home</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
-                culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
-                Laudantium, optio! Sunt.</p>
+            <h2>Hi, I'm</h2>
+            <h1>Saurabh kala</h1>
+            <h4>I am a Web developer.</h4>
+            <button class="btn btn-primary">About Me</button>
         </div>
 
         <div class="modal-container" id="about">
-            <h1>About</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
-                culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
-                Laudantium, optio! Sunt.</p>
+
+            <div>
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1>About Me</h1>
+                            <p>Languages : Javascript, Java, PHP, Python</p>
+                            <p>I am a web developer and UX designer.</p>
+                            <p>I really enjoy solving problems as well as making things pretty and easy to use.
+                                For the front-end I usually work with Javascript and also make the web pretty by using
+                                Sass, CSS and Bootstrap.
+                                And for the backend I use Java, Node , PHP.
+                            </p>
+                            <p>Apart from this I love playing video games.</p>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
+                                id="img_sau" style="display: block; width: 50%;">
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-sm-8 mx-auto">
+                      <h1>About Me</h1>
+                      <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>. For positioning of navbars, checkout the <a href="../examples/navbar-static/">top</a> and <a href="../examples/navbar-fixed/">fixed top</a> examples.</p>
+                      <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
+                      <p>
+                        <a class="btn btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+                      </p>
+                    </div> -->
+                </div>
+            </div>
+
         </div>
 
+
+
+
+        <!-- GALLERY -->
         <div class="modal-container" id="gallery">
-            <h1>Gallery</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
-                culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
-                Laudantium, optio! Sunt.</p>
+            <div class="jumbotron">
+
+                <h1 class="text-center">Gallery</h1>
+                <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse
+                    aperiam
+                    culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
+                    Laudantium, optio! Sunt.</p> -->
+
+                    
+                    <div class="container">
+                        <h2>Dynamic Tabs</h2>
+                        <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+                      
+                        <ul class="nav nav-tabs">
+                          <li class="active"><a data-toggle="tab" href="#all">All</a></li>
+                          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                          <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+                        </ul>
+                      
+                        <div class="tab-content">
+                          <div id="all" class="tab-pane fade in active">
+                            <h3>HOME</h3>
+                             <p>Contains all images</p> 
+                           </div>
+                          <div id="menu1" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                          </div>
+                          <div id="menu2" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                          </div>
+                          <div id="menu3" class="tab-pane fade">
+                            <h3>Menu 3</h3>
+                            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                          </div>
+                        </div>
+                      </div>
+
+            </div>
+
+
         </div>
 
+
+
+
+        <!-- TODO -->
         <div class="modal-container" id="toDo">
             <h1>ToDO</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
@@ -168,12 +253,52 @@
                 Laudantium, optio! Sunt.</p>
         </div>
 
+
+
+        <!-- CONTACT -->
         <div class="modal-container" id="contact">
-            <h1>Contact</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
-                culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
-                Laudantium, optio! Sunt.</p>
+            
+                <div class="jumbotron row">
+                   <div class="col-sm-6">
+            
+                     <h1>Contact Info</h1>
+
+                     <h6>Address</h6>
+                        8/193, Shastri Nagar, Roorkee, UK -247667
+                     <br><br>
+                     <h6>Email</h6>
+                        111121saurabh@gmail.com
+                        <br><br>
+                     <h6>Phone</h6>
+                     +91-9560442335
+
+
+                   </div>
+                    
+                    <div class="col-sm-6">
+                    <form>
+                        <h2 class="text-center">Drop me a Line &#128512;</h2>
+                        <br>
+                        <div class="form-group">
+                            <input type="email" class="form-control"  placeholder="Enter your email" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Enter your message" id="" name="" rows="4"
+                                cols="1000"></textarea>
+                        </div>
+    
+                        <div>
+                            <button class="btn btn-success form-control">Submit</button>
+                        </div>
+    
+                    </form>
+                    </div>
+                </div>
+            
         </div>
+
+    </div>
     </div>
 
 
