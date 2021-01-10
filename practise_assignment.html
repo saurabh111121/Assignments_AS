@@ -3,29 +3,6 @@
 
 <head>
     <title>Index</title>
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-        crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-        crossorigin="anonymous"></script>
 
 
 
@@ -79,10 +56,16 @@
         .modal-container:target {
             visibility: visible;
         }
-        .home-container{
+
+        .home-container {
             /* background-image: url(https://picsum.photos/200/300); */
-            
+            background: red;
         }
+
+
+
+        /* toDo list */
+        
     </style>
 
 </head>
@@ -205,37 +188,42 @@
                     culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
                     Laudantium, optio! Sunt.</p> -->
 
-                    
-                    <div class="container">
-                        <h2>Dynamic Tabs</h2>
-                        <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
-                      
-                        <ul class="nav nav-tabs">
-                          <li class="active"><a data-toggle="tab" href="#all">All</a></li>
-                          <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                          <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-                          <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-                        </ul>
-                      
-                        <div class="tab-content">
-                          <div id="all" class="tab-pane fade in active">
+
+                <div class="container">
+                    <h2>Dynamic Tabs</h2>
+                    <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a
+                        .tab-pane class with a unique ID for every tab and wrap them inside a div element with class
+                        .tab-content.</p>
+
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#all">All</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                        <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="all" class="tab-pane fade in active">
                             <h3>HOME</h3>
-                             <p>Contains all images</p> 
-                           </div>
-                          <div id="menu1" class="tab-pane fade">
-                            <h3>Menu 1</h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                          </div>
-                          <div id="menu2" class="tab-pane fade">
-                            <h3>Menu 2</h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                          </div>
-                          <div id="menu3" class="tab-pane fade">
-                            <h3>Menu 3</h3>
-                            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                          </div>
+                            <p>Contains all images</p>
                         </div>
-                      </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Menu 1</h3>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                commodo consequat.</p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>Menu 2</h3>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam.</p>
+                        </div>
+                        <div id="menu3" class="tab-pane fade">
+                            <h3>Menu 3</h3>
+                            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                explicabo.</p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -247,56 +235,173 @@
 
         <!-- TODO -->
         <div class="modal-container" id="toDo">
-            <h1>ToDO</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto quos accusantium non esse aperiam
-                culpa sapiente dignissimos distinctio ea nobis aut, deserunt, exercitationem a iusto iste iure.
-                Laudantium, optio! Sunt.</p>
-        </div>
+          
 
-
-
-        <!-- CONTACT -->
-        <div class="modal-container" id="contact">
             
-                <div class="jumbotron row">
-                   <div class="col-sm-6">
-            
-                     <h1>Contact Info</h1>
+            <div class="jumbotron"> 
 
-                     <h6>Address</h6>
-                        8/193, Shastri Nagar, Roorkee, UK -247667
-                     <br><br>
-                     <h6>Email</h6>
-                        111121saurabh@gmail.com
-                        <br><br>
-                     <h6>Phone</h6>
-                     +91-9560442335
-
-
-                   </div>
-                    
-                    <div class="col-sm-6">
-                    <form>
-                        <h2 class="text-center">Drop me a Line &#128512;</h2>
-                        <br>
-                        <div class="form-group">
-                            <input type="email" class="form-control"  placeholder="Enter your email" required>
-                        </div>
-    
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Enter your message" id="" name="" rows="4"
-                                cols="1000"></textarea>
-                        </div>
-    
-                        <div>
-                            <button class="btn btn-success form-control">Submit</button>
-                        </div>
-    
-                    </form>
+                <div id="tasker" class="tasker">
+                    <div id="error" class="error">Please enter a task</div>
+                    <div id="tasker-header" class="tasker-header">
+                        <input type="text" id="input-task" placeholder="Enter a task">
+                        <button id="add-task-btn"><i class="fa fa-fw fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="tasker-body">
+                        <ul id="tasks"></ul>
                     </div>
                 </div>
-            
+
+
+            </div>
         </div>
+
+        <script>
+            (function () {
+                'use strict';
+                var tasker = {
+                    init: function () {
+                        this.cacheDom();
+                        this.bindEvents();
+                        this.evalTasklist();
+                    },
+                    cacheDom: function () {
+                        this.taskInput = document.getElementById("input-task");
+                        this.addBtn = document.getElementById("add-task-btn");
+                        this.tasklist = document.getElementById("tasks");
+                        this.tasklistChildren = this.tasklist.children;
+                        this.errorMessage = document.getElementById("error");
+                    },
+                    bindEvents: function () {
+                        this.addBtn.onclick = this.addTask.bind(this);
+                        this.taskInput.onkeypress = this.enterKey.bind(this);
+                    },
+                    evalTasklist: function () {
+                        var i, chkBox, delBtn;
+                        //BIND CLICK EVENTS TO ELEMENTS
+                        for (i = 0; i < this.tasklistChildren.length; i += 1) {
+                            //ADD CLICK EVENT TO CHECKBOXES
+                            chkBox = this.tasklistChildren[i].getElementsByTagName("input")[0];
+                            chkBox.onclick = this.completeTask.bind(this, this.tasklistChildren[i], chkBox);
+                            //ADD CLICK EVENT TO DELETE BUTTON
+                            delBtn = this.tasklistChildren[i].getElementsByTagName("button")[0];
+                            delBtn.onclick = this.delTask.bind(this, i);
+                        }
+                    },
+                    render: function () {
+                        var taskLi, taskChkbx, taskVal, taskBtn, taskTrsh;
+                        //BUILD HTML
+                        taskLi = document.createElement("li");
+                        taskLi.setAttribute("class", "task");
+                        //CHECKBOX
+                        taskChkbx = document.createElement("input");
+                        taskChkbx.setAttribute("type", "checkbox");
+                        //USER TASK
+                        taskVal = document.createTextNode(this.taskInput.value);
+                        //DELETE BUTTON
+                        taskBtn = document.createElement("button");
+                        //TRASH ICON
+                        taskTrsh = document.createElement("i");
+                        taskTrsh.setAttribute("class", "fa fa-trash");
+                        //INSTERT TRASH CAN INTO BUTTON
+                        taskBtn.appendChild(taskTrsh);
+
+                        //APPEND ELEMENTS TO TASKLI
+                        taskLi.appendChild(taskChkbx);
+                        taskLi.appendChild(taskVal);
+                        taskLi.appendChild(taskBtn);
+
+                        //ADD TASK TO TASK LIST
+                        this.tasklist.appendChild(taskLi);
+
+                    },
+                    completeTask: function (i, chkBox) {
+                        if (chkBox.checked) {
+                            i.className = "task completed";
+                        } else {
+                            this.incompleteTask(i);
+                        }
+                    },
+                    incompleteTask: function (i) {
+                        i.className = "task";
+                    },
+                    enterKey: function (event) {
+                        if (event.keyCode === 13 || event.which === 13) {
+                            this.addTask();
+                        }
+                    },
+                    addTask: function () {
+                        var value = this.taskInput.value;
+                        this.errorMessage.style.display = "none";
+
+                        if (value === "") {
+                            this.error();
+                        } else {
+                            this.render();
+                            this.taskInput.value = "";
+                            this.evalTasklist();
+                        }
+                    },
+                    delTask: function (i) {
+                        this.tasklist.children[i].remove();
+                        this.evalTasklist();
+                    },
+                    error: function () {
+                        this.errorMessage.style.display = "block";
+                    }
+                };
+
+                tasker.init();
+            }());
+
+        </script>
+
+    </div>
+
+
+
+    <!-- CONTACT -->
+    <div class="modal-container" id="contact">
+
+        <div class="jumbotron row">
+            <div class="col-sm-6">
+
+                <h1>Contact Info</h1>
+
+                <h6>Address</h6>
+                8/193, Shastri Nagar, Roorkee, UK -247667
+                <br><br>
+                <h6>Email</h6>
+                111121saurabh@gmail.com
+                <br><br>
+                <h6>Phone</h6>
+                +91-9560442335
+
+
+            </div>
+
+            <div class="col-sm-6">
+                <form>
+                    <h2 class="text-center">Drop me a Line &#128512;</h2>
+                    <br>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Enter your message" id="" name="" rows="4"
+                            cols="1000"></textarea>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-success form-control">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
 
     </div>
     </div>
@@ -315,6 +420,32 @@
             document.getElementById("openNav").style.display = "inline-block";
         }
     </script>
+
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+
 
 </body>
 

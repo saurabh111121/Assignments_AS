@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<script src="https://use.fontawesome.com/10b1426743.js"></script>
+
+	<style>
+		body {
+			position: relative;
+		}
+
+		#home {
+			background-image: url(https://picsum.photos/800/800);
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+
+
+
+		}
+
+		#home,
+		#about,
+		#gallery,
+		#toDo,
+		#contact {
+			/* aligning the whole content to the page */
+			min-height: 100vh;
+		}
+
+
+
+		.sidebar {
+			height: 100%;
+			background: grey;
+			width: 0px;
+			position: fixed;
+			margin-top: 55px;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+		}
+
+		.mainContent {
+			margin-top: 55px;
+		}
+
+		.closeButton {
+			width: 10px;
+			height: 10px;
+			line-height: 10px;
+			text-align: center;
+			position: absolute;
+			top: 6px;
+			right: 50px;
+
+		}
+
+
+
+		/* footer section styling */
+		footer {
+			background: #111;
+			padding: 15px 23px;
+			color: #fff;
+			text-align: center;
+		}
+
+		footer span a {
+			color: blue;
+			text-decoration: none;
+		}
+
+		footer span a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+	<!-- Navbar -->
+	<header>
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+			<button id="openNav" class="btn btn-outline-secondary" onclick="w3_open()"><i
+					class="fa  fa-bars"></i></button>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+				aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+				<div class="ml-auto navbar-nav " id="navbarSupportedContent">
+
+					<ul class=" nav navbar-nav">
+						<li class="nav-item active">
+							<a class="nav-link" href="#home">HOME <span class="sr-only">(current)</span></a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#gallery">Gallery</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#toDo">ToDO List</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+
+
+	<!-- sidebar -->
+	<div class="sidebar" style="display:none" id="mySidebar">
+		<div class="closeButton">
+			<button class="btn btn-danger btn-xs" onclick="w3_close()">&times;</button>
+		</div>
+
+
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#gallery">Gallery</a></li>
+			<li><a href="#toDo">ToDo List</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</div>
+
+	<!-- main body -->
+	<div id="main">
+
+		<!-- Home section -->
+		<div id="home" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+			<h2>Hi, I'm</h2>
+			<h1>Saurabh kala</h1>
+			<h4>I am a Web developer.</h4>
+			<button class="btn btn-primary">About Me</button>
+		</div>
+
+		<!-- About section  -->
+		<div id="about" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+			<div class="jumbotron">
+				<h1 style="text-align: center;">About Me</h1>
+				<br>
+				<div class="row">
+					<div class="col-sm-6">
+
+						<p>Languages : Javascript, Java, PHP, Python</p>
+						<p>I am a web developer and UX designer.</p>
+						<p>I really enjoy solving problems as well as making things pretty and easy to use.
+							For the front-end I usually work with Javascript and also make the web pretty by using
+							Sass, CSS and Bootstrap.
+							And for the backend I use Java, Node , PHP.
+						</p>
+						<p>Apart from this I love playing video games.</p>
+
+					</div>
+					<div class="col-sm-6">
+						<img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
+							id="img_sau" style="display: block; width: 50%;">
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- gallery section  -->
+			<div id="gallery" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+				<h1>Gallery</h1>
+				<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section
+					and
+					look at the navigation bar while scrolling!</p>
+				<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section
+					and
+					look at the navigation bar while scrolling!</p>
+			</div>
+
+			<!-- To DO section  -->
+			<div id="toDo" class="container-fluid bg-primary" style="padding-top:70px;padding-bottom:70px">
+				<h1>To DO List</h1>
+				<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section
+					and
+					look at the navigation bar while scrolling!</p>
+				<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section
+					and
+					look at the navigation bar while scrolling!</p>
+			</div>
+
+
+			<!-- Contact Section  -->
+			<div id="contact" class="container-fluid " style="padding-top:70px;padding-bottom:70px">
+
+
+				<div class="jumbotron row">
+					
+
+					<!-- Left Part -->
+
+					<div class="col-sm-6" >
+
+						<div class="form-group row">
+							<i class="fa fa-map-marker fa-2x col-sm-2" style="color: Tomato;"></i>
+							<div class="col-sm-6">
+								<h6 style="color: Tomato;">Addrees</h6>
+							    <p>Roorkee, UK-247667</p>
+							</div>
+							
+						</div>
+
+						<div class="form-group row">
+							<i class="fa fa-envelope fa-2x col-sm-2 " style="color: Tomato;"></i>
+							<div class="col-sm-6">
+								<h6 style="color: Tomato;">Email</h6>
+							    <p>111121saurabh@gmail.com</p>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<i class="fa fa-phone fa-2x col-sm-2" style="color: Tomato;"></i>
+							<div class="col-sm-6">
+								<h6 style="color: Tomato;">Phone</h6>
+							    <p>+91-9560442335</p>
+							</div>
+							
+						</div>
+
+					</div>
+
+
+
+					<!-- right part -->
+
+					<div class="col-sm-6">
+						<h2 class="text-center">Drop me a Line &#128512;</h2><br>
+						<form action="">
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Enter your email" required>
+							</div>
+
+							<div class="form-group">
+								<textarea class="form-control" placeholder="Enter your Message" name="" id="" cols="50"
+									rows="6"></textarea>
+							</div>
+
+							<div class="form-group">
+								<button class="form-control btn-success">Submit</button>
+
+							</div>
+
+
+						</form>
+						<a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+						<a href="https://instagram.com/saurabh111121"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+						<a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="https://github.com/saurabh111121"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+					</div>
+
+
+
+
+				</div>
+			</div>
+			<!-- footer section -->
+			<footer>
+				<span>Created By <a href="https://github.com/saurabh111121">Saurabh kala</a> | <span
+						class="far fa-copyright"></span> 2020 All rights reserved.</span>
+			</footer>
+
+
+		</div>
+		<!--Main body div end-->>
+
+
+
+		<script>
+			function w3_open() {
+				document.getElementById("main").style.marginLeft = "20%";
+				document.getElementById("mySidebar").style.width = "20%";
+				document.getElementById("mySidebar").style.display = "block";
+				document.getElementById("openNav").style.display = 'none';
+			}
+			function w3_close() {
+				document.getElementById("main").style.marginLeft = "0%";
+				document.getElementById("mySidebar").style.display = "none";
+				document.getElementById("openNav").style.display = "inline-block";
+			}
+		</script>
+
+</body>
+
+</html>
