@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
+    <title>Bootstrap Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
         body {
             position: relative;
+            padding: 20px;
         }
 
         #home {
             background-image: url(https://picsum.photos/800/800);
-            
+
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -173,23 +174,7 @@
             color: #ed1c24;
         }
 
-
-        /* footer section styling */
-        footer {
-            background: #111;
-            padding: 15px 23px;
-            color: #fff;
-            text-align: center;
-        }
-
-        footer span a {
-            color: blue;
-            text-decoration: none;
-        }
-
-        footer span a:hover {
-            text-decoration: underline;
-        }
+        /* gallery */
     </style>
 </head>
 
@@ -243,7 +228,7 @@
         </div>
 
 
-        <ul>
+        <ul style="">
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
@@ -261,7 +246,7 @@
             <h1>Saurabh kala</h1>
             <h4>I am a Web developer.</h4>
             <a href="#about" class="btn btn-primary">About Me</a>
-          
+
         </div>
 
         <!-- About section  -->
@@ -293,9 +278,201 @@
 
 
             <!-- gallery section  -->
-            <div id="gallery" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-                <h1>Gallery</h1>
-                
+            <div id="gallery" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+                <!-- <div class="container">
+                    <div class="row" style=" margin: 15px;">
+                      <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid rounded">
+                      </a>
+                      <a href="https://picsum.photos/200" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=257" class="img-fluid rounded">
+                      </a>
+                    </div>
+                    <div class="row" style=" margin: 15px;">
+                      <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid rounded">
+                      </a>
+                      <a href="https://picsum.photos/300" data-toggle="lightbox" data-gallery="gallery" class="col-md-3">
+                        <img src="https://picsum.photos/300" class="img-fluid rounded">
+                      </a>
+                    </div>
+                  </div> -->
+
+                <h2>Gallery</h2>
+
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('nature')"> Nature</button>
+                    <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+                    <button class="btn" onclick="filterSelection('people')"> People</button>
+                </div>
+
+                <!-- Portfolio Gallery Grid -->
+                <div class="row" id="galleryId">
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="https://unsplash.it/600.jpg?image=256" alt="Mountains" style="width:100%">
+                            <h4>Mountains</h4>
+
+                        </div>
+                    </div>
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="https://unsplash.it/600.jpg?image=257" alt="City" style="width:100%">
+                            <h4>City</h4>
+
+                        </div>
+                    </div>
+                    <div class="column nature">
+                        <div class="content">
+                            <img src="https://unsplash.it/600.jpg?image=258" alt="Birds" style="width:100%">
+                            <h4>Birds</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/1072/200/300" alt="Car" style="width:100%">
+                            <h4>Retro</h4>
+
+                        </div>
+                    </div>
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/1071/200/300" alt="Car" style="width:100%">
+                            <h4>Fast</h4>
+
+                        </div>
+                    </div>
+                    <div class="column cars">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/1070/200/300" alt="Car" style="width:100%">
+                            <h4>Classic</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="column people">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/1005/200/300" alt="Man" style="width:100%">
+                            <h4>Man</h4>
+
+                        </div>
+                    </div>
+                    <div class="column people">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/1010/200/300" alt="Kid" style="width:100%">
+                            <h4>Kid</h4>
+
+                        </div>
+                    </div>
+                    <div class="column people">
+                        <div class="content">
+                            <img src="https://picsum.photos/id/3/200/300" alt="man_working" style="width:100%">
+                            <h4>Working</h4>
+
+                        </div>
+                    </div>
+                    <!-- END GRID -->
+                </div>
+                <style>
+                    #galleryId img {
+                        height: 200px;
+                        width: 100px;
+
+                    }
+
+
+                    * {
+                        box-sizing: border-box;
+                    }
+
+                    body {
+                        background-color: #f1f1f1;
+                        padding: 20px;
+                        font-family: Arial;
+                    }
+
+                    /* Center website */
+                    .main {
+                        max-width: 1000px;
+                        margin: auto;
+                    }
+
+                    h1 {
+                        font-size: 50px;
+                        word-break: break-all;
+                    }
+
+                    .row {
+                        margin: 10px -16px;
+                    }
+
+                    /* Add padding BETWEEN each column */
+                    .row,
+                    .row>.column {
+                        padding: 8px;
+                    }
+
+                    /* Create three equal columns that floats next to each other */
+                    .column {
+                        float: left;
+                        width: 33.33%;
+                        display: none;
+                        /* Hide all elements by default */
+                    }
+
+                    /* Clear floats after rows */
+                    .row:after {
+                        content: "";
+                        display: table;
+                        clear: both;
+                    }
+
+                    /* Content */
+                    .content {
+                        background-color: white;
+                        padding: 10px;
+                    }
+
+                    /* The "show" class is added to the filtered elements */
+                    .show {
+                        display: block;
+                    }
+
+                    /* Style the buttons */
+                    .btn {
+                        border: none;
+                        outline: none;
+                        padding: 12px 16px;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+
+                    .btn:hover {
+                        background-color: #ddd;
+                    }
+
+                    /* .btn.active {
+                      background-color: #666;
+                      color: white;
+                    } */
+                </style>
+
+
             </div>
 
             <!-- To DO section  -->
@@ -340,7 +517,7 @@
                                     //ADD CLICK EVENT TO CHECKBOXES
                                     chkBox = this.tasklistChildren[i].getElementsByTagName("input")[0];
                                     chkBox.onclick = this.completeTask.bind(this, this.tasklistChildren[i], chkBox);
-                                    
+
                                     //ADD CLICK EVENT TO DELETE BUTTON
                                     delBtn = this.tasklistChildren[i].getElementsByTagName("button")[0];
                                     delBtn.onclick = this.delTask.bind(this, i);
@@ -419,9 +596,7 @@
 
 
             <!-- Contact Section  -->
-            <div id="contact" class="container-fluid ">
-
-
+            <div id="contact" class="container-fluid">
                 <div class="jumbotron">
                     <h2 class="text-center">Drop me a Line &#128512;</h2><br>
 
@@ -480,32 +655,24 @@
                     </div>
                     <!--Row div end-->
                     <br>
-                    <div style="text-align: center;"> 
-                    <a href=""><i class="fa fa-facebook-square " aria-hidden="true"></i></a>
-                    <a href="https://instagram.com/saurabh111121"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="https://github.com/saurabh111121"><i class="fa fa-github" aria-hidden="true"></i></a>
-
+                    <div style="text-align: center;">
+                        <a href="https://facebook.com"><i class="fa fa-facebook-square " aria-hidden="true"></i></a>
+                        <a href="https://instagram.com/saurabh111121"><i class="fa fa-instagram"
+                                aria-hidden="true"></i></a>
+                        <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://github.com/saurabh111121"><i class="fa fa-github" aria-hidden="true"></i></a>
                     </div>
-
-                </div>
-                <!--Jumbotron end-->
-
+                </div> <!---->
             </div>
             <!--contact section end-->
 
-            <!-- footer section -->
-            <footer>
-                <span>Created By <a href="https://github.com/saurabh111121">Saurabh kala</a> | <span
-                        class="far fa-copyright"></span> 2020 All rights reserved.</span>
-            </footer>
 
 
         </div>
         <!--Main body div end-->>
 
 
-
+        <!-- sdiebar script -->
         <script>
             function w3_open() {
                 document.getElementById("main").style.marginLeft = "20%";
@@ -528,6 +695,54 @@
 
         <!-- Font aweseome -->
         <script src="https://use.fontawesome.com/10b1426743.js"></script>
+
+        <!-- gallery script -->
+        <script>
+            filterSelection("all")
+            function filterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("column");
+                if (c == "all") c = "";
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                }
+            }
+
+            function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+                }
+            }
+
+            function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                        arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+            }
+
+
+            // Add active class to the current button (highlight it)
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+
 
 
 </body>
