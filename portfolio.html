@@ -13,12 +13,15 @@
         }
 
         #home {
-            background-image: url(https://picsum.photos/800/800);
-
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+            /* background-image: url(https://picsum.photos/800/800); */
+            background-image: url(https://unsplash.it/1200/768.jpg?image=251);
+            margin-right: 0px;
+            margin-left: 0px;
+            position: relative;
+            /* -webkit-background-size: cover; */
+            /* -moz-background-size: cover; */
+            /* -o-background-size: cover; */
+            background-size:cover;
 
 
 
@@ -36,8 +39,13 @@
 
 
         .sidebar {
+            padding-top: 50px;
+
+         
+
+
             height: 100%;
-            background: grey;
+            background: #37474F;
             width: 0px;
             position: fixed;
             margin-top: 55px;
@@ -46,6 +54,22 @@
             overflow: hidden;
 
             box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+       
+
+            
+        }
+
+
+        .sidebar li {
+            color: red;
+             
+            font-size: large;
+            
+             list-style: none;
+             padding: 10px;
+            
+
         }
 
         .mainContent {
@@ -224,16 +248,15 @@
     <!-- sidebar -->
     <div class="sidebar" style="display:none" id="mySidebar">
         <div class="closeButton">
-            <button class="btn btn-danger btn-xs" onclick="w3_close()">&times;</button>
+            <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
         </div>
 
-
-        <ul style="">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#toDo">ToDo List</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul > 
+            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#about"><i class="fa fa-address-card"></i>About</a></li>
+            <li><a href="#gallery"><i class="fa fa-camera-retro"></i>Gallery</a></li>
+            <li><a href="#toDo"><i class="fa fa-list-alt"></i>ToDo List</a></li>
+            <li><a href="#contact"><i class="fa fa-address-book"></i>Contact</a></li>
         </ul>
     </div>
 
@@ -478,7 +501,7 @@
             <!-- To DO section  -->
             <div id="toDo" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
                 <h2 style="text-align: center;">To Do List </h2>
-                <div id="tasker" class="tasker">
+                <!-- <div id="tasker" class="tasker">
                     <div id="error" class="error">Please enter a task</div>
                     <div id="tasker-header" class="tasker-header">
                         <input type="text" id="input-task" placeholder="Enter a task">
@@ -588,7 +611,7 @@
 
                         tasker.init();
                     }());
-                </script>
+                </script> -->
 
 
 
@@ -662,7 +685,8 @@
                         <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a href="https://github.com/saurabh111121"><i class="fa fa-github" aria-hidden="true"></i></a>
                     </div>
-                </div> <!---->
+                </div>
+                <!---->
             </div>
             <!--contact section end-->
 
