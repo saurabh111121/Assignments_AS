@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>New</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font aweseome -->
+    <script src="https://use.fontawesome.com/10b1426743.js"></script>
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        #home,
+        #about,
+        #gallery,
+        #toDo,
+        #contact {
+            /* aligning the whole content to the page */
+            min-height: 100vh;
+        }
+
+        #home{
+            background-image: url(https://unsplash.it/1200/768.jpg?image=251);
+            background-size:cover;
+        }
+
+
+        .sidebar{
+           padding-top: 50px; /* adjusting below navbar */ 
+
+           background: #37474F;
+
+           position: fixed;   /* positioning with pages */
+           overflow: hidden; 
+
+           width: 0px;   
+           height: 100%; 
+
+           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+        }
+
+        .sidebar a{
+            color: red;
+        }
+        
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <button id="openNav" class="btn btn-outline-secondary" onclick="w3_open()"><i class="fa  fa-bars"></i></button>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#toDo">ToDo List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- sidebar -->
+    <div class="sidebar" id="mySidebar">
+        <div class="closeButton">
+            <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
+        </div>
+
+        
+
+        <ul>
+            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#about"><i class="fa fa-address-card"></i>About</a></li>
+            <li><a href="#gallery"><i class="fa fa-camera-retro"></i>Gallery</a></li>
+            <li><a href="#toDo"><i class="fa fa-list-alt"></i>ToDo List</a></li>
+            <li><a href="#contact"><i class="fa fa-address-book"></i>Contact</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Main body -->
+    <div id="main">
+        <div id="home" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
+            <h1>Home</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="about" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
+            <h1>About</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="gallery" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
+            <h1>Gallery</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="toDo" class="container-fluid bg-primary" style="padding-top:70px;padding-bottom:70px">
+            <h1>To DO</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="contact" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+            <h1>Contact</h1>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
+                look at the navigation bar while scrolling!</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Bootstrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- sdiebar script -->
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "20%";
+            document.getElementById("mySidebar").style.width = "20%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
+    </script>
+
+</body>
+
+</html>
