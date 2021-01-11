@@ -42,9 +42,24 @@
            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
         }
 
-        .sidebar a{
-            color: red;
+        .sidebar ul{
+            list-style-type: none;
         }
+
+        .sidebar a{
+            
+            color: #CFD8DC;
+            font-size: 16px;
+            padding: 16px 24px;   
+        }
+
+        .closeButton {
+            margin-top: 12px;
+            margin-bottom: 5px;
+           border-left-width: 205px;
+           margin-left: 200px;
+        }
+
         
     </style>
 </head>
@@ -78,16 +93,64 @@
         <div class="closeButton">
             <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
         </div>
+         
+    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+        <!-- Bootstrap List Group -->
+        <ul class="list-group">
+            <!-- Separator with title -->
+            <!-- <li class="list-group-item bg-dark sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small> MENU</small>
+                <div class="closeButton">
+                    <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
+                </div>
+            </li> -->
+            <!-- /END Separator -->
+            
+                
+            <a href="#home" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-home fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Home</span>    
+                </div>
+            </a>
+            <a href="#about" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-address-card fa-fw mr-3"></span>
+                    <span class="menu-collapsed">About</span>    
+                </div>
+            </a>
+            <a href="#gallery" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-camera-retro fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Gallery</span>    
+                </div>
+            </a>
+            <a href="#toDo" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-list-alt fa-fw mr-3"></span>
+                    <span class="menu-collapsed">ToDo List </span>    
+                </div>
+            </a>
+            <a href="#contact" class="bg-dark list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-address-book fa-fw mr-3"></span>
+                    <span class="menu-collapsed">Contact </span>    
+                </div>
+            </a>
+          
+           
+        </ul><!-- List Group END-->
+    </div><!-- sidebar-container END -->
 
         
 
-        <ul>
+        <!-- <ul>
             <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
             <li><a href="#about"><i class="fa fa-address-card"></i>About</a></li>
             <li><a href="#gallery"><i class="fa fa-camera-retro"></i>Gallery</a></li>
             <li><a href="#toDo"><i class="fa fa-list-alt"></i>ToDo List</a></li>
             <li><a href="#contact"><i class="fa fa-address-book"></i>Contact</a></li>
-        </ul>
+        </ul> -->
     </div>
 
 
