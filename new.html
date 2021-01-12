@@ -22,45 +22,81 @@
             min-height: 100vh;
         }
 
-        #home{
+        #home {
             background-image: url(https://unsplash.it/1200/768.jpg?image=251);
-            background-size:cover;
+            background-size: cover;
         }
 
 
-        .sidebar{
-           padding-top: 50px; /* adjusting below navbar */ 
+        .sidebar {
+            padding-top: 50px;
+            /* adjusting below navbar */
 
-           background: #37474F;
+            background: #37474F;
 
-           position: fixed;   /* positioning with pages */
-           overflow: hidden; 
+            position: fixed;
+            /* positioning with pages */
+            overflow: hidden;
 
-           width: 0px;   
-           height: 100%; 
+            width: 0px;
+            height: 100%;
 
-           box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
         }
 
-        .sidebar ul{
+        .sidebar ul {
             list-style-type: none;
         }
 
-        .sidebar a{
-            
+        .sidebar a {
+
             color: #CFD8DC;
             font-size: 16px;
-            padding: 16px 24px;   
+            padding: 16px 24px;
         }
 
         .closeButton {
             margin-top: 12px;
             margin-bottom: 5px;
-           border-left-width: 205px;
-           margin-left: 200px;
+            border-left-width: 205px;
+            margin-left: 200px;
         }
 
-        
+
+
+        /* to do list */
+        .myDeco li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            background: #eee;
+            font-size: 16px;
+            transition: 0.2s;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .myDeco li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+
+        .myDeco li:hover {
+            background: #ddd;
+        }
+
+        #myList {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+
+        #myDIV {
+            margin-left: 350px;
+            margin-right: 300px;
+        }
     </style>
 </head>
 
@@ -68,7 +104,7 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <button id="openNav" class="btn btn-outline-secondary" onclick="w3_open()"><i class="fa  fa-bars"></i></button>
-        <ul class="navbar-nav">
+        <!-- <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="#home">Home</a>
             </li>
@@ -85,7 +121,15 @@
                 <a class="nav-link" href="#contact">Contact</a>
             </li>
 
-        </ul>
+        </ul> -->
+        <div class="navbar-nav">
+            <div><a class="nav-link" href="#home">Home</a></div>
+            <div><a class="nav-link" href="#about">About</a></div>
+            <div><a class="nav-link" href="#gallery">Gallery</a></div>
+            <div><a class="nav-link" href="#toDo">ToDo List</a></div>
+            <div><a class="nav-link" href="#contact">Contact</a></div>
+        </div>
+
     </nav>
 
     <!-- sidebar -->
@@ -93,56 +137,56 @@
         <div class="closeButton">
             <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
         </div>
-         
-    <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-        <!-- Bootstrap List Group -->
-        <ul class="list-group">
-            <!-- Separator with title -->
-            <!-- <li class="list-group-item bg-dark sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
+            <!-- Bootstrap List Group -->
+            <ul class="list-group">
+                <!-- Separator with title -->
+                <!-- <li class="list-group-item bg-dark sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
                 <small> MENU</small>
                 <div class="closeButton">
                     <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
                 </div>
             </li> -->
-            <!-- /END Separator -->
-            
-                
-            <a href="#home" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-home fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Home</span>    
-                </div>
-            </a>
-            <a href="#about" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-address-card fa-fw mr-3"></span>
-                    <span class="menu-collapsed">About</span>    
-                </div>
-            </a>
-            <a href="#gallery" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-camera-retro fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Gallery</span>    
-                </div>
-            </a>
-            <a href="#toDo" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-list-alt fa-fw mr-3"></span>
-                    <span class="menu-collapsed">ToDo List </span>    
-                </div>
-            </a>
-            <a href="#contact" class="bg-dark list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-address-book fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Contact </span>    
-                </div>
-            </a>
-          
-           
-        </ul><!-- List Group END-->
-    </div><!-- sidebar-container END -->
+                <!-- /END Separator -->
 
-        
+
+                <a href="#home" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-home fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Home</span>
+                    </div>
+                </a>
+                <a href="#about" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-address-card fa-fw mr-3"></span>
+                        <span class="menu-collapsed">About</span>
+                    </div>
+                </a>
+                <a href="#gallery" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-camera-retro fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Gallery</span>
+                    </div>
+                </a>
+                <a href="#toDo" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-list-alt fa-fw mr-3"></span>
+                        <span class="menu-collapsed">ToDo List </span>
+                    </div>
+                </a>
+                <a href="#contact" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-address-book fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Contact </span>
+                    </div>
+                </a>
+
+
+            </ul><!-- List Group END-->
+        </div><!-- sidebar-container END -->
+
+
 
         <!-- <ul>
             <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
@@ -156,40 +200,216 @@
 
     <!-- Main body -->
     <div id="main">
+        <!-- Home section -->
         <div id="home" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-            <h1>Home</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
+            <h2>Hi, I'm</h2>
+            <h1>Saurabh kala</h1>
+            <h4>I am a Web developer.</h4>
+            <a href="#about" class="btn btn-primary">About Me</a>
+
         </div>
-        <div id="about" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-            <h1>About</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
+        <div id="about" class="container-fluid " style="padding-top:70px;padding-bottom:70px">
+
+            <!-- <div class="jumbotron">
+                <h1 style="text-align: center;">About Me</h1>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <p>Languages : Javascript, Java, PHP, Python</p>
+                        <p>I am a web developer and UX designer.</p>
+                        <p>I really enjoy solving problems as well as making things pretty and easy to use.
+                            For the front-end I usually work with Javascript and also make the web pretty by using
+                            Sass, CSS and Bootstrap.
+                            And for the backend I use Java, Node , PHP.
+                        </p>
+                        <p>Apart from this I love playing video games.</p>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
+                            id="img_sau" style="display: block; width: 50%;">
+                    </div>
+
+                </div>
+
+            </div> -->
+
+            <h1 style="text-align: center;">About Me</h1>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <p>Languages : Javascript, Java, PHP, Python</p>
+                    <p>I am a web developer and UX designer.</p>
+                    <p>I really enjoy solving problems as well as making things pretty and easy to use.
+                        For the front-end I usually work with Javascript and also make the web pretty by using
+                        Sass, CSS and Bootstrap.
+                        And for the backend I use Java, Node , PHP.
+                    </p>
+                    <p>Apart from this I love playing video games.</p>
+
+                </div>
+                <div class="col-sm-6">
+                    <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
+                        id="img_sau" style="display: block; width: 50%;">
+                </div>
+
+            </div>
         </div>
+
+        <!-- Gallery section -->
         <div id="gallery" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-            <h1>Gallery</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
+
+
+
+
+
         </div>
+
         <div id="toDo" class="container-fluid bg-primary" style="padding-top:70px;padding-bottom:70px">
-            <h1>To DO</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
+
+            <div id="myDIV" class="header">
+
+                <h2 style="margin:5px;">To Do List</h2>
+                <div class="row">
+                    <div class="form-group col-sm-8">
+                        <input type="text" class="form-control" id="inputTask" placeholder="Enter a Task">
+                    </div>
+                    <div class="from-group col-sm-4">
+                        <button onclick="addNewTask()" class="btn btn-secondary">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <ul id="myList" class="myDeco">
+                <li>Hit the gym</li>
+                <li class="checked">Pay bills</li>
+                <li>Meet George</li>
+                <li>Buy eggs</li>
+                <li>Read a book</li>
+                <li>Organize office</li>
+            </ul>
+
+            <script>
+
+                var myNodelist = document.getElementsByTagName("LI");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                }
+
+
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }
+
+                function addNewTask() {
+                    var li = document.createElement("li");
+                    var inputValue = document.getElementById("inputTask").value;
+                    var t = document.createTextNode(inputValue);
+                    li.appendChild(t);
+                    if (inputValue === '') {
+                        alert("You must write something!");
+                    } else {
+                        document.getElementById("myList").appendChild(li);
+                    }
+                    document.getElementById("inputTask").value = "";
+
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    li.appendChild(span);
+
+                    for (i = 0; i < close.length; i++) {
+                        close[i].onclick = function () {
+                            var div = this.parentElement;
+                            div.style.display = "none";
+                        }
+                    }
+                }
+            </script>
+        
         </div>
+
+        <!-- contact section -->
         <div id="contact" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
-            <h1>Contact</h1>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
-            <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and
-                look at the navigation bar while scrolling!</p>
+            <div class="jumbotron">
+                <h2 class="text-center">Drop me a Line &#128512;</h2><br>
+
+
+                <div class="row">
+
+                    <!-- Left Part -->
+                    <div class="col-sm-6" style="left: 100px; top: 40px;">
+                        <div class="form-group row">
+                            <i class="fa fa-map-marker fa-2x col-sm-2" style="color: Tomato;"></i>
+                            <div class="col-sm-6">
+                                <h6 style="color: Tomato;">Addrees</h6>
+                                <p>Roorkee, UK-247667</p>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <i class="fa fa-envelope fa-2x col-sm-2 " style="color: Tomato;"></i>
+                            <div class="col-sm-6">
+                                <h6 style="color: Tomato;">Email</h6>
+                                <p>abc@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <i class="fa fa-phone fa-2x col-sm-2" style="color: Tomato;"></i>
+                            <div class="col-sm-6">
+                                <h6 style="color: Tomato;">Phone</h6>
+                                <p>+91-9560442335</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- right part -->
+
+                    <div class="col-sm-6">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Enter your Message" name="" id="" cols="50"
+                                    rows="6"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="form-control btn-success">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!--Row div end-->
+                <br>
+                <div style="text-align: center;">
+                    <a href="https://facebook.com"><i class="fa fa-facebook-square " aria-hidden="true"></i></a>
+                    <a href="https://instagram.com/saurabh111121"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://github.com/saurabh111121"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <!---->
         </div>
     </div>
 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Bootstrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+       
+         .myDeco li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            background: #eee;
+            font-size: 16px;
+            transition: 0.2s;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .myDeco li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+
+        .myDeco li:hover {
+            background: #ddd;
+        }
+
+        #myList{
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+        #myDIV {
+            margin-left: 500px;
+            margin-right: 300px;
+        }
+
+
+       
+    </style>
+</head>
+
+<body>
+
+    <div id="myDIV" class="header">
+    
+        <h2 style="margin:5px;">To Do List</h2>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <input type="text" class="form-control" id="inputTask" placeholder="Enter a Task">
+            </div>
+            <div class="from-group col-sm-6">
+                <button onclick="addNewTask()" class="btn btn-secondary">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <ul id="myList" class="myDeco">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+    </ul>
+
+    <script>
+        // Create a "close" button and append it to each list item
+        // var myNodelist = document.getElementsByTagName("LI");
+        // var myNodelist = document.getElementById("myList")
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+
+        // Create a new list item when clicking on the "Add" button
+        function addNewTask() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("inputTask").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myList").appendChild(li);
+            }
+            document.getElementById("inputTask").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
