@@ -23,8 +23,15 @@
         }
 
         #home {
-            background-image: url(https://unsplash.it/1200/768.jpg?image=251);
+            color: white;
+            background-image: url(1.jpg);
             background-size: cover;
+        }
+
+
+
+        #toDo {
+            background-image: url(7.jpg);
         }
 
 
@@ -32,7 +39,8 @@
             padding-top: 50px;
             /* adjusting below navbar */
 
-            background: #37474F;
+            /* background: #37474F; */
+            background: white;
 
             position: fixed;
             /* positioning with pages */
@@ -50,7 +58,7 @@
 
         .sidebar a {
 
-            color: #CFD8DC;
+            /* color: #CFD8DC; */
             font-size: 16px;
             padding: 16px 24px;
         }
@@ -105,7 +113,7 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <button id="openNav" class="btn btn-outline-secondary" onclick="w3_open()"><i class="fa  fa-bars"></i></button>
 
-        <div class="navbar-nav">
+        <div class="navbar-nav ml-auto">
             <div><a class="nav-link" href="#home">Home</a></div>
             <div><a class="nav-link" href="#about">About</a></div>
             <div><a class="nav-link" href="#gallery">Gallery</a></div>
@@ -118,47 +126,39 @@
     <!-- sidebar -->
     <div class="sidebar" id="mySidebar">
         <div class="closeButton">
-            <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
+            <button class="btn btn-dark btn-xs" onclick="w3_close()">&times;</button>
         </div>
 
         <div id="sidebar-container" class="sidebar-expanded d-none d-md-block">
-            <!-- Bootstrap List Group -->
+
             <ul class="list-group">
-                <!-- Separator with title -->
-                <!-- <li class="list-group-item bg-dark sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                <small> MENU</small>
-                <div class="closeButton">
-                    <button class="btn btn-secondary btn-xs" onclick="w3_close()">&times;</button>
-                </div>
-            </li> -->
-                <!-- /END Separator -->
 
 
-                <a href="#home" class="bg-dark list-group-item list-group-item-action">
+                <a href="#home" class="bg-light list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-home fa-fw mr-3"></span>
                         <span class="menu-collapsed">Home</span>
                     </div>
                 </a>
-                <a href="#about" class="bg-dark list-group-item list-group-item-action">
+                <a href="#about" class=" list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-address-card fa-fw mr-3"></span>
                         <span class="menu-collapsed">About</span>
                     </div>
                 </a>
-                <a href="#gallery" class="bg-dark list-group-item list-group-item-action">
+                <a href="#gallery" class=" list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-camera-retro fa-fw mr-3"></span>
                         <span class="menu-collapsed">Gallery</span>
                     </div>
                 </a>
-                <a href="#toDo" class="bg-dark list-group-item list-group-item-action">
+                <a href="#toDo" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-list-alt fa-fw mr-3"></span>
                         <span class="menu-collapsed">ToDo List </span>
                     </div>
                 </a>
-                <a href="#contact" class="bg-dark list-group-item list-group-item-action">
+                <a href="#contact" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-address-book fa-fw mr-3"></span>
                         <span class="menu-collapsed">Contact </span>
@@ -178,58 +178,96 @@
         <div id="home" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
             <h2>Hi, I'm</h2>
             <h1>Saurabh kala</h1>
-            <h4>I am a Web developer.</h4>
+            <!-- <h4>I am a Web developer.</h4> -->
+
+            <div id="parent">I am a Web developer.<div id="border"></div>
+            </div>
+
+            <br>
             <a href="#about" class="btn btn-primary">About Me</a>
+            <style>
+                @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+
+
+                #parent {
+                    height: 40px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    font-family: 'Source Code Pro', monospace;
+                    font-size: 28px;
+                    color: rgba(255, 249, 249, 0.7);
+                    position: relative;
+                }
+
+                #border {
+                    border-bottom: solid 3px rgba(0, 255, 0, .75);
+                    position: absolute;
+                    right: -7px;
+                    width: 20px;
+                }
+
+                /* Animation */
+                #parent {
+                    animation: animated-text 2s steps(30, end) 1s 1 normal both
+                }
+
+                #border {
+                    animation: animated-cursor 600ms steps(30, end) infinite;
+                }
+
+                /* text animation */
+
+                @keyframes animated-text {
+                    from {
+                        width: 0;
+                    }
+
+                    to {
+                        width: 480px;
+                    }
+                }
+
+                /* cursor animations */
+
+                @keyframes animated-cursor {
+                    from {
+                        border-bottom-color: rgba(0, 255, 0, .75);
+                    }
+
+                    to {
+                        border-bottom-color: transparent;
+                    }
+                }
+            </style>
+
 
         </div>
-        <div id="about" class="container-fluid " style="padding-top:70px;padding-bottom:70px">
 
-            <!-- <div class="jumbotron">
-                <h1 style="text-align: center;">About Me</h1>
-                <br>
-                <div class="row">
-                    <div class="col-sm-6">
 
-                        <p>Languages : Javascript, Java, PHP, Python</p>
-                        <p>I am a web developer and UX designer.</p>
-                        <p>I really enjoy solving problems as well as making things pretty and easy to use.
-                            For the front-end I usually work with Javascript and also make the web pretty by using
-                            Sass, CSS and Bootstrap.
-                            And for the backend I use Java, Node , PHP.
-                        </p>
-                        <p>Apart from this I love playing video games.</p>
-
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
-                            id="img_sau" style="display: block; width: 50%;">
-                    </div>
-
-                </div>
-
-            </div> -->
+        <!-- about section -->
+        <div id="about" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
 
             <h1 style="text-align: center;">About Me</h1>
             <br>
-            <div class="row">
+            <div class="row" style="margin-left: 100px; color: white;">
                 <div class="col-sm-6">
-
-                    <p>Languages : Javascript, Java, PHP, Python</p>
-                    <p>I am a web developer and UX designer.</p>
+                    <br><br>
+                    <h6>I am a web developer and UX designer.</h6><br>
                     <p>I really enjoy solving problems as well as making things pretty and easy to use.
                         For the front-end I usually work with Javascript and also make the web pretty by using
-                        Sass, CSS and Bootstrap.
-                        And for the backend I use Java, Node , PHP.
+                        CSS and Bootstrap.
+                        And for the back-end I use Java, Node.js & PHP.
                     </p>
                     <p>Apart from this I love playing video games.</p>
 
                 </div>
                 <div class="col-sm-6">
-                    <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img" class="img-fluid responsive"
-                        id="img_sau" style="display: block; width: 50%;">
+                    <img src="https://i.ibb.co/Th81qHM/sau.jpg" alt="saurabh img"
+                        class="img-thumbnail img-fluid responsive" id="img_sau" style="display: block; width: 50%;">
                 </div>
-
             </div>
+
         </div>
 
         <!-- Gallery section -->
@@ -240,31 +278,39 @@
                 <br>
                 <div class="row hovereffect">
                     <div class="col-sm-3">
-                        <img src="https://picsum.photos/200" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://picsum.photos/200" class="img-thumbnail img-responsive" alt="" height="200"
+                            width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=256" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=256" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=254" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=254" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=255" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=255" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                 </div>
                 <br><br>
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=253" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=253" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=252" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=252" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=251" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=251" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                     <div class="col-sm-3">
-                        <img src="https://unsplash.it/600.jpg?image=250" class="img-thumbnail img-responsive" alt=""  height="200" width="200" >
+                        <img src="https://unsplash.it/600.jpg?image=250" class="img-thumbnail img-responsive" alt=""
+                            height="200" width="200">
                     </div>
                 </div>
             </div>
@@ -272,11 +318,11 @@
 
         </div>
 
-        <div id="toDo" class="container-fluid bg-primary" style="padding-top:70px;padding-bottom:70px">
+        <div id="toDo" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
 
             <div id="myDIV" class="header">
 
-                <h2 style="margin:5px;">To Do List</h2>
+                <h2 style="margin:5px; margin-left: 120px;color: white;">To Do List</h2>
                 <div class="row">
                     <div class="form-group col-sm-8">
                         <input type="text" class="form-control" id="inputTask" placeholder="Enter a Task">
@@ -296,25 +342,6 @@
 
             <script>
 
-                var myNodelist = document.getElementsByTagName("LI");
-                var i;
-                for (i = 0; i < myNodelist.length; i++) {
-                    var span = document.createElement("SPAN");
-                    var txt = document.createTextNode("\u00D7");
-                    span.className = "close";
-                    span.appendChild(txt);
-                    myNodelist[i].appendChild(span);
-                }
-
-
-                var close = document.getElementsByClassName("close");
-                var i;
-                for (i = 0; i < close.length; i++) {
-                    close[i].onclick = function () {
-                        var div = this.parentElement;
-                        div.style.display = "none";
-                    }
-                }
 
                 function addNewTask() {
                     var li = document.createElement("li");
@@ -341,12 +368,33 @@
                         }
                     }
                 }
+
+                var myNodelist = document.getElementsByTagName("LI");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("\u00D7");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                }
+
+
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function () {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }
+
             </script>
-        
+
         </div>
 
         <!-- contact section -->
-        <div id="contact" class="container-fluid bg-success" style="padding-top:70px;padding-bottom:70px">
+        <div id="contact" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
             <div class="jumbotron">
                 <h2 class="text-center">Drop me a Line &#128512;</h2><br>
 
