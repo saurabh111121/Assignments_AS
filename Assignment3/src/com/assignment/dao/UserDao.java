@@ -53,7 +53,8 @@ public class UserDao {
 	        ps.setString(2,u.getName());  
 	        ps.setInt(3,u.getEmployee_id());  
 	        ps.setString(4,u.getSite());  
-	        ps.setString(5,u.getDepartment());  
+	        ps.setString(5,u.getDepartment());
+	        ps.setString(6,u.getLogin_id());
 	        status=ps.executeUpdate();  
 	    }catch(Exception e){System.out.println(e);}  
 	    return status;  
@@ -80,7 +81,5 @@ public class UserDao {
 	} 
 
 	
-    
-    
-	
+
 }

@@ -118,7 +118,7 @@
                                                     <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="" name="employee_id"
-                                                            onfocusout="myFunction2()" required />
+                                                             required />
                                                     </div>
                                                 </div>
 
