@@ -34,8 +34,8 @@
 
             <div class="container">
                 <div>
-                    <table class="table">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-light">
                             <tr>
                                 <th>Login Id</th>
                                 <th>Name</th>
@@ -57,8 +57,8 @@
                         </tbody>
                     </table>
                 </div>
-
-
+                
+      
                 <div class="row">
                     <div class="col-sm-10">
                         <!-- Update User Modal-->
@@ -82,11 +82,11 @@
                                         <!-- Modal body -->
                                         <div class="modal-body">
                                             <form action="edituser.jsp" method="POST" id="update1123" class="needs-validation_updateUser" novalidate>
-
+                                           
                                                 <div class="form-group row">
                                                     <label for="login" class="col-sm-4 col-form-label"> Login:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="login_id"
+                                                        <input type="text" class="form-control" id="" name="login_id" value="${u.setLogin_id()}"
                                                             required>
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@
                                                 <div class="form-group row">
                                                     <label for="site" class="col-sm-4 col-form-label">Site: </label>
                                                     <div class="col-sm-8">
-                                                        <select class="custom-select" name="site" id="" required>
+                                                        <select class="custom-select" name="site" id="" value="${u.getSite()}" required>
                                                             <option value="" class="">Select your Site</option>
                                                             <option>DEL</option>
                                                             <option>PNQ</option>
@@ -109,7 +109,7 @@
                                                     <label for="name" class="col-sm-4 col-form-label">
                                                         Name:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="name"
+                                                        <input type="text" class="form-control" name="name" value="${u.getName()}"
                                                             required />
                                                     </div>
                                                 </div>
@@ -117,7 +117,7 @@
                                                 <div class="form-group row">
                                                     <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="employee_id"
+                                                        <input type="text" class="form-control" id="" name="employee_id" value="${u.getEmployee_id()}"
                                                              required />
                                                     </div>
                                                 </div>
@@ -126,15 +126,16 @@
                                                     <label for="department" class="col-sm-4 col-form-label">
                                                         Department:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="department"
+                                                        <input type="text" class="form-control" id="" name="department" value="${u.getDepartment()}"
                                                             required />
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <div class="form-group text-center">
                                                     <button class="btn btn-success"
                                                         style="align-items:;">Submit</button>
                                                 </div>
+                                               
 
                                             </form>
                                             <script>
@@ -197,7 +198,7 @@
                                                 <div class="form-group row">
                                                     <label for="login" class="col-sm-4 col-form-label"> Login:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="login_id"
+                                                        <input type="text" class="form-control" id="login_id" name="login_id"
                                                             required>
                                                     </div>
                                                 </div>
@@ -242,8 +243,8 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
-                                                    <button class="btn btn-secondary" type="submit">Submit</button>
+                                                <div class="form-group text-center">
+                                                    <button class="btn btn-success" type="submit">Submit</button>
                                                 </div>
 
                                             </form>
@@ -259,7 +260,7 @@
                                                                 }
                                                                 form.classList.add('was-validated');
                                                                 if (form.checkValidity() == true) {
-                                                                    
+                                                                	
                                                                     document.forms[0].reset();
                                                                     document.getElementById('addUser1123').classList.remove("was-validated");
                                                                 }
