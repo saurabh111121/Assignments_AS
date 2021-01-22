@@ -86,7 +86,7 @@
                                                 <div class="form-group row">
                                                     <label for="login" class="col-sm-4 col-form-label"> Login:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="login_id" value="${u.setLogin_id()}"
+                                                        <input type="text" class="form-control" id="login_id" name="login_id" onkeyup="searchLogin(this.value)"
                                                             required>
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@
                                                 <div class="form-group row">
                                                     <label for="site" class="col-sm-4 col-form-label">Site: </label>
                                                     <div class="col-sm-8">
-                                                        <select class="custom-select" name="site" id="" value="${u.getSite()}" required>
+                                                        <select class="custom-select" name="site" id="site"  required>
                                                             <option value="" class="">Select your Site</option>
                                                             <option>DEL</option>
                                                             <option>PNQ</option>
@@ -109,7 +109,7 @@
                                                     <label for="name" class="col-sm-4 col-form-label">
                                                         Name:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="name" value="${u.getName()}"
+                                                        <input type="text" class="form-control" id="name" name="name"
                                                             required />
                                                     </div>
                                                 </div>
@@ -117,7 +117,7 @@
                                                 <div class="form-group row">
                                                     <label for="id" class="col-sm-4 col-form-label">Employee Id:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="employee_id" value="${u.getEmployee_id()}"
+                                                        <input type="text" class="form-control" id="employee_id" name="employee_id"
                                                              required />
                                                     </div>
                                                 </div>
@@ -126,7 +126,7 @@
                                                     <label for="department" class="col-sm-4 col-form-label">
                                                         Department:</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" id="" name="department" value="${u.getDepartment()}"
+                                                        <input type="text" class="form-control" id="department" name="department"
                                                             required />
                                                     </div>
                                                 </div>
@@ -135,10 +135,31 @@
                                                     <button class="btn btn-success"
                                                         style="align-items:;">Submit</button>
                                                 </div>
-                                               
+                                                
+                                                <!-- FOR TESTING auto-populate   
+                                                <div id="res"></div>
+                                                -->
 
                                             </form>
                                             <script>
+                                            //for auto-populate
+                                            function searchLogin(l) {
+                                                var xmlhttp = new XMLHttpRequest();
+                                                xmlhttp.onreadystatechange = function () {
+                                                    //document.getElementById("res").innerHTML = xmlhttp.responseText;
+                                                    var val = xmlhttp.responseText;
+                                                       var fdata =$.trim(val);
+                                                       var sp= fdata.split(",");
+                                                       $("#site").val(sp[0]);
+                                                       $("#name").val(sp[1]);
+                                                       $("#employee_id").val(sp[2]);
+                                                       $("#department").val(sp[3]);
+                                                }
+                                                xmlhttp.open("POST", "autopopulate.jsp?q=" + l, true);
+                                                xmlhttp.send();
+                                            }
+                                                
+                                               // for basic validation
                                                 (function () {
                                                     window.addEventListener('load', function () {
                                                         var forms = document.getElementsByClassName('needs-validation_updateUser');
