@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title>Assignment 3</title>
+    <title>Home</title>
     <meta charset="ISO-8859-1">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

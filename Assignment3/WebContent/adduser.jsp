@@ -16,7 +16,7 @@ int i = UserDao.save(u);
 if(i>0){  
 response.sendRedirect("table.jsp");  
 }else{  
-response.sendRedirect("table.jsp");  
+response.sendRedirect("addUserError.jsp");  
 } 
 %>
 </body>

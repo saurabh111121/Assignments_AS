@@ -10,13 +10,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
     </head>
 
     <body>
-    
-     
 
         <!-- header file -->
         <%@ include file="header.html" %>
@@ -130,15 +126,17 @@
                                                             required />
                                                     </div>
                                                 </div>
+                                                <!-- FOR TESTING auto-populate   
+                                                <div id="res" style="color:red;"></div>
+                                                -->
 
                                                 <div class="form-group text-center">
                                                     <button class="btn btn-success"
                                                         style="align-items:;">Submit</button>
                                                 </div>
                                                 
-                                                <!-- FOR TESTING auto-populate   
-                                                <div id="res"></div>
-                                                -->
+                                                
+                                                
 
                                             </form>
                                             <script>
@@ -146,14 +144,16 @@
                                             function searchLogin(l) {
                                                 var xmlhttp = new XMLHttpRequest();
                                                 xmlhttp.onreadystatechange = function () {
-                                                    //document.getElementById("res").innerHTML = xmlhttp.responseText;
+                                                   // document.getElementById("res").innerHTML = xmlhttp.responseText;
                                                     var val = xmlhttp.responseText;
+                                                    
                                                        var fdata =$.trim(val);
                                                        var sp= fdata.split(",");
                                                        $("#site").val(sp[0]);
                                                        $("#name").val(sp[1]);
                                                        $("#employee_id").val(sp[2]);
                                                        $("#department").val(sp[3]);
+                                                    
                                                 }
                                                 xmlhttp.open("POST", "autopopulate.jsp?q=" + l, true);
                                                 xmlhttp.send();
